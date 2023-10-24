@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+p
+{background-color:rgba(255,0,0,0.1);}
+span.red {color:red;}
+span.blue {color:blue;}
+span.yellow {color:yellow;}
+
+body {
+/* 加载背景图 */
+background-image: url(static/images/thhh.jpg);
+/* 背景图垂直、水平均居中 */
+background-position: center center;
+/* 背景图不平铺 */
+background-repeat: no-repeat;
+/* 当内容高度大于图片高度时，背景图像的位置相对于viewport固定 */
+background-attachment: fixed;
+/* 让背景图基于容器大小伸缩 */
+background-size: cover;
+/* 设置背景颜色，背景图加载过程中会显示背景色 */
+/* background-color: #464646; */
+}
+-->
+
+</style>
+<head>
+    <style>body{
+            background-color:rgb(240,255,255)
+    }</style>
+    <link rel="shortcut icon" href="static/images/day.ico" />
+    <link rel="bookmark" href="static/images/day.ico" />
+    <meta charset="UTF-8">
+    <title>天气预报</title>
+    <base target="_blank">
+</head>
+<body background="static/images/1.jpg"
+               style="background-repeat:no-repeat
+               background-attachment:fixed;
+               background-size:100% 100%; ">
+<a name="tips">基本的注意事项 - 有用的提示</a>
+<div>
+    <acronym title="城市天气查询">CWF</acronym>
+    <form action="/weather1" method="POST">
+        <a href="http://127.0.0.1:5000/">
+            <img src="static/images/day.jpg" title="DAY DAY GOOD WEATHER!" width="300" height="250" alt="SUNSHINE"/></a>
+        <a><h1 align="center"><span class="red">城市</span></h1></a>
+        <!--标题居中的两种方式     <span class="red">城市</span>给标题附色，需要在style中提前申明 span.red{color:red;}-->
+        <a><h1 style="text-align:center">城市</h1></a>
+        <p style="color:yellow">This text is in Verdana and red</p>
+        <p><input type="text" name="city"></p>
+        <div class="form-group ">
+            <button class="form-control btn-primary" id="load">查询</button>
+        </div>
+        {{msg}}
+    </form>
+    <button type="button"
+onclick="document.getElementById('emo').innerHTML = Date()">
+点击我来显示日期和时间
+</button>
+<p id="emo">时 间</p>
+
+    <p>以下为超链接导航</p>
+    <hr>
+    <a href="http://www.baidu.com/">链接百度<img src="static/images/baidu.jpg" alt="百度" width="50"></a>&ensp;&ensp;&ensp;
+    <a href="http://www.bing.com/">链接必应<img src="static/images/bing.jpg" alt="必应" width="70"></a>
+    <hr>
+    <address>
+        <!--添加链接，去除链接下划线, target="_blank"使之以新建窗口打开链接 或者在<head>中提前申明<base target="_blank">-->
+        "<a href='http://www.weather.com.cn/' style="text-decoration:none" target="_blank">https://www.weather.com.cn</a>"
+    </address>
+    <br>
+</div>
+<div> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;———数据来源--<span class="red">天</span><span class="yellow">气</span><span
+        class="blue">网</span> <br>
+    <hr>
+    &copy;&ensp;张杨骏2023/10/17
+    <a href="#tips" target="_blank">回到置顶</a>
+    <a href="http://www.www.baidu.com/#tips" target="_blank">没用的提示</a>
+    <img src="http://www.w3school.com.cn/i/w3school_logo_white.gif" />
+</div>
+</body>
+</html>
